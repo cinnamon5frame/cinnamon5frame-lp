@@ -47,13 +47,13 @@
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "相談だけでも大丈夫ですか？", "acceptedAnswer": { "@type": "Answer", "text": "もちろんです。「何を頼めばいいかわからない」段階からのご相談も歓迎です。ヒアリングとお見積もり、ワンポイント診断は無料です。" } },
+    { "@type": "Question", "name": "法人での依頼・請求書払いは可能ですか？", "acceptedAnswer": { "@type": "Answer", "text": "可能です。請求書の発行、契約書の取り交わしにも対応しています。出版社・雑誌媒体からの受注実績があります。" } },
     { "@type": "Question", "name": "使える写真が1枚もないのですが、大丈夫ですか？", "acceptedAnswer": { "@type": "Answer", "text": "大丈夫です。むしろ得意分野です。撮影10カットのプランなら、写真ゼロから始められます。商品もお店もプロフィールも、半日の撮影でひととおり揃います。" } },
     { "@type": "Question", "name": "手持ちの写真を使ってもらうことはできますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい、お持ちの写真をご支給いただけます。その際、撮影された方とWebサイトへの使用許可をご確認いただいています。人物が写っている場合は、写っている方の許可も含みます。素材サイトの写真は商用利用が可能なライセンスかどうかも確認させてください。権利関係が確認できない写真は、トラブルを避けるため使用を見送らせていただく場合があります。" } },
     { "@type": "Question", "name": "遠方でも撮影を依頼できますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい、全国出張に対応しています。交通費は実費でのご請求となります。まずは日程と場所をご相談ください。" } },
     { "@type": "Question", "name": "LPの公開後の修正はできますか？", "acceptedAnswer": { "@type": "Answer", "text": "納品から2週間以内の誤字修正・微調整は無償で対応します。その後の更新や改善は、月額の運用サポート（¥10,000/月）または都度お見積もりで承ります。" } },
     { "@type": "Question", "name": "納期はどのくらいですか？", "acceptedAnswer": { "@type": "Answer", "text": "LP制作は内容確定からおよそ2〜4週間が目安です。撮影を含む場合は撮影日程により変動します。お急ぎの場合もご相談ください。" } },
-    { "@type": "Question", "name": "複数ページのホームページ制作もお願いできますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい、承っています。まずはLPで反応を確かめてから本格的なHPへ、という段階的な進め方もご提案できます。ページ数が多くなる場合は、信頼できるエンジニアやライターと組んで進めます。その場合も、窓口は最初から最後まで私ひとりで、進行と品質の責任も私が持ちます。" } },
-    { "@type": "Question", "name": "法人での依頼・請求書払いは可能ですか？", "acceptedAnswer": { "@type": "Answer", "text": "可能です。請求書の発行、契約書の取り交わしにも対応しています。" } }
+    { "@type": "Question", "name": "複数ページのホームページ制作もお願いできますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい、承っています。まずはLPで反応を確かめてから本格的なHPへ、という段階的な進め方もご提案できます。ページ数が多くなる場合は、信頼できるエンジニアやライターと組んで進めます。その場合も、窓口は最初から最後まで私ひとりで、進行と品質の責任も私が持ちます。" } }
   ]
 }
 </script>
@@ -1090,6 +1090,8 @@
   .print-credits .pc-list li:last-child { border-bottom: 0; }
   .print-credits .pc-list b { font-weight: 500; font-size: 1rem; }
   .print-credits .pc-list span { font-size: 0.82rem; color: var(--text-soft); }
+  .print-credits .pc-note { grid-column: 2; margin: 1rem 0 0; font-size: 0.82rem; line-height: 1.9; color: var(--text-soft); }
+  @media (max-width: 768px) { .print-credits .pc-note { grid-column: 1; } }
   @media (max-width: 768px) {
     .print-credits { grid-template-columns: 1fr; gap: 1rem; margin-top: 3rem; padding-top: 2rem; }
     .print-credits .pc-list li { gap: 0.3rem 0; }
@@ -1937,12 +1939,14 @@
 
     <!-- 撮影実績: 書影は出版社の権利があるため画像は載せず、事実の記載のみ。
          掲載許可が取れたら works-grid にカードとして戻す -->
+    <!-- 出版社案件は「経歴」ではなく「取引実績」として書く。数字（点数・期間）が確定したら <span> に足す -->
     <div class="print-credits reveal">
-      <span class="pc-label">Photography</span>
+      <span class="pc-label">出版社からの受注</span>
       <ul class="pc-list">
-        <li><b>KIMONO anne vol.5 / vol.7</b><span>着物専門誌の掲載カメラマンとして撮影を担当</span></li>
-        <li><b>「帯結ばない帯結び」</b><span>書籍全編の写真撮影を担当</span></li>
+        <li><b>書籍「帯結ばない帯結び」</b><span>出版社から一冊分の撮影を受注。編集担当と進行しながら、全編の写真を納期内に納品。書店で販売中</span></li>
+        <li><b>KIMONO anne vol.5 / vol.7</b><span>着物専門誌の編集部から、掲載カメラマンとして撮影を受注</span></li>
       </ul>
+      <p class="pc-note">出版社・雑誌媒体からの受注実績があります。法人契約・請求書払い・契約書の取り交わしに対応しています。</p>
     </div>
   </div>
 </section>
@@ -2017,6 +2021,10 @@
         <p>もちろんです。「何を頼めばいいかわからない」段階からのご相談も歓迎です。ヒアリングとお見積もりは無料です。</p>
       </details>
       <details class="faq-item reveal">
+        <summary>法人での依頼・請求書払いは可能ですか？</summary>
+        <p>可能です。請求書の発行、契約書の取り交わしにも対応しています。出版社・雑誌媒体からの受注実績があります。</p>
+      </details>
+      <details class="faq-item reveal">
         <summary>使える写真が1枚もないのですが、大丈夫ですか？</summary>
         <p>大丈夫です。むしろ得意分野です。撮影10カットのプランなら、写真ゼロから始められます。商品もお店もプロフィールも、半日の撮影でひととおり揃います。</p>
       </details>
@@ -2043,10 +2051,6 @@
         <p>はい、承っています。まずはLPで反応を確かめてから本格的なHPへ、という段階的な進め方もご提案できます。<br>
         ページ数が多くなる場合は、信頼できるエンジニアやライターと組んで進めます。その場合も、窓口は最初から最後まで私ひとりで、進行と品質の責任も私が持ちます。担当者が変わって話が振り出しに戻る、ということはありません。<br>
         内容に合わせてお見積もりしますので、お気軽にご相談ください。</p>
-      </details>
-      <details class="faq-item reveal">
-        <summary>法人での依頼・請求書払いは可能ですか？</summary>
-        <p>可能です。請求書の発行、契約書の取り交わしにも対応しています。</p>
       </details>
     </div>
   </div>
