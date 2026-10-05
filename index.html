@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>cinnamon5frame | 一目で仕事がわかり、相談につながるLP制作（撮影込み・大阪・全国対応）</title>
-<meta name="description" content="腕はあるのに、問い合わせが来ない。見た人が一目で何の仕事かわかって、相談したくなるページを、本物の写真と言葉で作ります。撮影込みのLP制作。大阪拠点・全国対応。無料診断つき。">
-<meta property="og:title" content="cinnamon5frame | 一目でわかって、相談につながるページ">
+<title>cinnamon5frame | 一目で仕事がわかり、申し込みにつながるLP制作（撮影込み・大阪・全国対応）</title>
+<meta name="description" content="腕はあるのに、問い合わせが来ない。見た人が一目で何の仕事かわかって、申し込みたくなるページを、本物の写真と言葉で作ります。撮影込みのLP制作。大阪拠点・全国対応。無料診断つき。">
+<meta property="og:title" content="cinnamon5frame | 一目でわかって、申し込みにつながるページ">
 <meta property="og:description" content="腕はあるのに、問い合わせが来ない人へ。本物の写真と言葉で、一目で仕事がわかるページを作ります。無料診断受付中。">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://cinnamon5frame.com/ogp.jpg">
@@ -281,7 +281,7 @@
 
   .hero-title {
     font-family: 'Zen Old Mincho', serif;
-    font-size: clamp(2.2rem, 5.5vw, 4rem);
+    font-size: clamp(1.45rem, 5.2vw, 3.4rem);
     font-weight: 600;
     line-height: 1.55;
     letter-spacing: 0.06em;
@@ -298,6 +298,17 @@
   .hero-title.played .char {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .hero-promise {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  @media (max-width: 520px) {
+    .hero-title { letter-spacing: 0.02em; }
   }
 
   .hero-sub {
@@ -1063,6 +1074,19 @@
   @media (max-width: 900px) { .shoot-gallery { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 520px) { .shoot-gallery { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; } }
 
+  .timing { margin: 3.5rem auto 0; max-width: 34rem; padding: 2rem 2.2rem; border: 1px solid var(--line); background: rgba(255,255,255,0.45); }
+  .timing-title { margin: 0 0 1rem; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.04em; text-align: center; }
+  .timing-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1.6rem; font-size: 0.9rem; line-height: 1.7; }
+  .timing-list li { padding-left: 1.1em; position: relative; }
+  .timing-list li::before { content: "—"; position: absolute; left: 0; opacity: .45; }
+  @media (max-width: 600px) { .timing { padding: 1.6rem 1.4rem; } .timing-list { grid-template-columns: 1fr; } }
+  .case-box { margin-top: 4rem; padding: 2.4rem 2.6rem; border: 1px solid var(--line); background: rgba(255,255,255,0.5); }
+  .case-label { margin: 0 0 1.4rem; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.04em; }
+  .case-steps { margin: 0; }
+  .case-steps > div { display: grid; grid-template-columns: 7rem 1fr; gap: 0 1.6rem; padding: 0.9rem 0; border-top: 1px solid var(--line); }
+  .case-steps dt { font-size: 0.8rem; color: var(--text-soft); padding-top: 0.15rem; }
+  .case-steps dd { margin: 0; font-size: 0.9rem; line-height: 1.9; }
+  @media (max-width: 600px) { .case-box { padding: 1.8rem 1.4rem; } .case-steps > div { grid-template-columns: 1fr; gap: 0.3rem; } }
   .print-credits {
     margin-top: 4.5rem;
     padding-top: 2.4rem;
@@ -1637,10 +1661,10 @@
   <div class="container">
     <span class="en-label">Photographer / Web Creator</span>
     <p class="tagline">5 perspectives. Your world, <em>beautifully</em> framed.</p>
-    <h1 class="hero-title" id="heroTitle">何の仕事か、一目でわかる。<br>相談したくなるページ</h1>
+    <h1 class="hero-title" id="heroTitle">一目で、仕事がわかる<br>どんな人か、伝わる<br>そのまま、申し込みたくなる</h1>
     <p class="hero-sub" id="heroSub">
-      腕はあるのに、問い合わせが来ない。<br>
-      見に来た人が「何をしている人か」を一目でわかって、そのまま相談したくなるページを、本物の写真と言葉で作ります。
+      <strong class="hero-promise">あなたのお仕事のページを作ります。</strong><br>
+      写真が足りなければ、撮影もします。
     </p>
     <div class="hero-cta" id="heroCta">
       <a href="#shindan" class="btn-primary">無料診断を受けてみる</a>
@@ -1677,6 +1701,15 @@
       あなたの腕の問題ではありません<br>
       ページを見ても、仕事の中身が伝わっていないだけです
     </p>
+    <div class="timing reveal">
+      <p class="timing-title">ご相談が多いのは、こんなとき</p>
+      <ul class="timing-list">
+        <li>新しいメニューや講座を出す</li>
+        <li>お店や教室を開く、場所を移る</li>
+        <li>値段を上げる</li>
+        <li>人を募集する</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -1914,27 +1947,15 @@
       <p class="section-note">掲載許可をいただいたもののみご紹介しています。</p>
     </div>
     <div class="works-grid">
-      <!-- ayaaya様（オンラインサロン）のカードは、サロンが休止中のため一旦非表示。
-           再開したら下のブロックのコメントを外すだけで戻せる。画像 works-ayaaya.jpg は残してある。
-      <a href="https://ayaayasonlinesalon.netlify.app/" target="_blank" rel="noopener" class="work-card reveal">
+      <!-- 2026-09-29：以前の実績カードは外した。戻すときは git の履歴から。 -->
+      <a href="https://ayaayas-kitsukeshi.pages.dev/" target="_blank" rel="noopener" class="work-card reveal">
         <div class="work-visual">
-          <img src="works-ayaaya.jpg" alt="ayaayaの秘密の宝箱 オンラインサロンLP" width="1200" height="750" loading="lazy" decoding="async">
+          <img src="works-ayaaya-kitsukeshi.jpg" alt="着付け教室ayaaya's 着付け師・着付け講師養成コースのLP" width="1200" height="750" loading="lazy" decoding="async">
           <span class="view-label">View Site</span>
         </div>
-        <div class="work-tag">LP</div>
-        <div class="work-title">ayaayaの秘密の宝箱</div>
-        <div class="work-note">着物系インフルエンサーのオンラインサロンLP制作</div>
-      </a>
-      -->
-      <a href="https://figindiba.netlify.app/" target="_blank" rel="noopener" class="work-card reveal">
-        <!-- 施術中のカット（works-fig-alt.jpg）に差し替える場合は src を変えるだけ。ただし被写体の方の顔が写るため、fig様の掲載可否を確認してから -->
-        <div class="work-visual">
-          <img src="works-fig.jpg" alt="肌質改善工房 fig の店内" width="1200" height="750" loading="lazy" decoding="async">
-          <span class="view-label">View Site</span>
-        </div>
-        <div class="work-tag">LP + Instagram</div>
-        <div class="work-title">肌質改善工房 fig</div>
-        <div class="work-note">インディバ専門エステサロンのLP制作・Instagram運用</div>
+        <div class="work-tag">LP + 更新の仕組み</div>
+        <div class="work-title">着付け教室ayaaya's 講師養成コース</div>
+        <div class="work-note">着付け講師を育てるコースのページ。料金とカリキュラムを先に確かめてから相談できるようにした。日程や料金は、先生が自分で書きかえられる</div>
       </a>
       <a href="https://azukimono.netlify.app/" target="_blank" rel="noopener" class="work-card reveal">
         <div class="work-visual">
@@ -1943,13 +1964,21 @@
         </div>
         <div class="work-tag">LP + 撮影</div>
         <div class="work-title">あず着物教室</div>
-        <div class="work-note">着付け教室のページ。先生の写真、別のカメラマンの写真、私が撮った写真。3種類の写真を、同じ人に見えるようにそろえた</div>
+        <div class="work-note">着付け教室のページと、トップの写真の撮影。くわしくは下の事例に</div>
       </a>
     </div>
 
     <!-- 撮影実績: 書影は出版社の権利があるため画像は載せず、事実の記載のみ。
          掲載許可が取れたら works-grid にカードとして戻す -->
     <!-- 出版社案件は「経歴」ではなく「取引実績」として書く。数字（点数・期間）が確定したら <span> に足す -->
+    <div class="case-box reveal">
+      <p class="case-label">事例　あず着物教室（大阪・南千里）</p>
+      <dl class="case-steps">
+        <div><dt>前</dt><dd>教室のページがなかった。教室のことは、Instagramとブログにバラバラにあった</dd></div>
+        <div><dt>やったこと</dt><dd>先生の写真、別のカメラマンの写真、私が撮った写真。3種類を同じ人に見えるようにそろえて、教室でやっていること6つと料金を1ページにまとめた</dd></div>
+        <div><dt>あと</dt><dd>何をしている教室か、いくらかかるかを、1ページで見てもらえるようになった</dd></div>
+      </dl>
+    </div>
     <div class="print-credits reveal">
       <span class="pc-label">出版社からの受注</span>
       <ul class="pc-list">
@@ -1962,7 +1991,7 @@
 </section>
 
 <!-- VOICES: 実際のお客様の声が揃うまで非公開（ダミー掲載は信頼を一撃で損なうため）。
-     ayaaya様・fig様に「依頼前の悩み → 依頼後の変化（できれば数字：問い合わせ数・予約数など）」をもらったら、
+     お客様に「依頼前の悩み → 依頼後の変化（できれば数字：問い合わせ数・予約数など）」をもらったら、
      下のコメントを外してテキストを差し替える。
 <section id="voices">
   <div class="container">
@@ -1974,10 +2003,6 @@
       <div class="voice-card reveal">
         <p class="voice-text">（ここにayaaya様の声）</p>
         <p class="voice-name">オンラインサロン運営 / ayaaya様</p>
-      </div>
-      <div class="voice-card reveal">
-        <p class="voice-text">（ここにfig様の声）</p>
-        <p class="voice-name">エステサロン経営 / 肌質改善工房 fig様</p>
       </div>
     </div>
     <div class="mid-cta reveal"><a href="#contact">わたしも相談してみる</a></div>
