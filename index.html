@@ -38,7 +38,8 @@
     { "@type": "Offer", "name": "LP制作（撮影なし）", "price": "80000", "priceCurrency": "JPY" },
     { "@type": "Offer", "name": "ホームページ制作（5ページまで・撮影10カット込み）", "price": "300000", "priceCurrency": "JPY" },
     { "@type": "Offer", "name": "撮影のみ・プロフィール一式（10カット）", "price": "50000", "priceCurrency": "JPY" },
-    { "@type": "Offer", "name": "撮影のみ・アイコン（3カット）", "price": "20000", "priceCurrency": "JPY" }
+    { "@type": "Offer", "name": "撮影のみ・アイコン（3カット）", "price": "20000", "priceCurrency": "JPY" },
+    { "@type": "Offer", "name": "LPオプション：自分で書きかえられる仕組み", "price": "30000", "priceCurrency": "JPY" }
   ],
   "sameAs": ["https://www.instagram.com/_cinnamon5frame_/", "https://lin.ee/stgiYHl"]
 }
@@ -53,7 +54,7 @@
     { "@type": "Question", "name": "使える写真が1枚もないのですが、大丈夫ですか？", "acceptedAnswer": { "@type": "Answer", "text": "大丈夫です。むしろ得意分野です。プロフィール一式（10カット）なら、アイコンから告知用まで半日の撮影でひととおり揃います。ページまで作る場合も、撮影10カット込みのプランがあります。" } },
     { "@type": "Question", "name": "手持ちの写真を使ってもらうことはできますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい、お持ちの写真をご支給いただけます。その際、撮影された方とWebサイトへの使用許可をご確認いただいています。人物が写っている場合は、写っている方の許可も含みます。素材サイトの写真は商用利用が可能なライセンスかどうかも確認させてください。権利関係が確認できない写真は、トラブルを避けるため使用を見送らせていただく場合があります。" } },
     { "@type": "Question", "name": "遠方でも撮影を依頼できますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい、全国出張に対応しています。交通費は実費でのご請求となります。まずは日程と場所をご相談ください。" } },
-    { "@type": "Question", "name": "LPの公開後の修正はできますか？", "acceptedAnswer": { "@type": "Answer", "text": "納品から2週間以内の誤字修正・微調整は無償で対応します。その後の更新や改善は、月額の運用サポート（¥10,000/月）または都度お見積もりで承ります。" } },
+    { "@type": "Question", "name": "LPの公開後の修正はできますか？", "acceptedAnswer": { "@type": "Answer", "text": "納品から2週間以内の誤字修正・微調整は無償で対応します。その後の更新や改善は、月額の運用サポート（¥10,000/月）または都度お見積もりで承ります。料金・日程・お知らせをご自身で書きかえられる仕組み（＋¥30,000）をつけることもできます。" } },
     { "@type": "Question", "name": "納期はどのくらいですか？", "acceptedAnswer": { "@type": "Answer", "text": "LP制作は内容確定からおよそ2〜4週間が目安です。撮影を含む場合は撮影日程により変動します。お急ぎの場合もご相談ください。" } },
     { "@type": "Question", "name": "複数ページのホームページ制作もお願いできますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい、作れます。ページが5つで ¥300,000〜（写真10枚込み）です。先にLPを作って、あとからホームページに広げることもできます。そのときは、LPをトップページにして、あとの4ページを足します。LPで払った分は引きます（LPを公開してから1年のあいだ）。ページ数が多くなる場合は、信頼できるエンジニアやライターと組んで進めます。その場合も、窓口は最初から最後まで私ひとりで、進行と品質の責任も私が持ちます。" } }
   ]
@@ -123,7 +124,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    transition: opacity 0.9s ease, visibility 0.9s;
+    transition: opacity 0.5s ease, visibility 0.5s;
   }
 
   #loader.done {
@@ -318,7 +319,7 @@
     max-width: 34em;
     opacity: 0;
     transform: translateY(16px);
-    transition: opacity 0.8s 0.9s, transform 0.8s 0.9s;
+    transition: opacity 0.7s 0.5s, transform 0.7s 0.5s;
   }
 
   .hero-sub.played { opacity: 1; transform: translateY(0); }
@@ -333,7 +334,7 @@
     text-transform: uppercase;
     color: var(--text-soft);
     opacity: 0;
-    transition: opacity 1s 1.3s;
+    transition: opacity 0.8s 0.9s;
   }
 
   .hero-meta.played { opacity: 1; }
@@ -1472,7 +1473,7 @@
     flex-wrap: wrap;
     opacity: 0;
     transform: translateY(16px);
-    transition: opacity 0.8s 1.1s, transform 0.8s 1.1s;
+    transition: opacity 0.7s 0.7s, transform 0.7s 0.7s;
   }
 
   .hero-cta.played { opacity: 1; transform: translateY(0); }
@@ -1629,6 +1630,31 @@
     .form-row { grid-template-columns: 1fr; gap: 0; }
 
     #contact { padding: 90px 0; }
+  }
+</style>
+<script>
+  // JSが動いたときだけ、アニメーション用に要素を隠す。
+  // 4秒たっても本体のスクリプトが最後まで動かなければ、隠すのをやめて全部見せる（保険）。
+  document.documentElement.classList.add('js');
+  setTimeout(function () {
+    if (!window.__c5fReady) document.documentElement.classList.remove('js');
+  }, 4000);
+</script>
+<style>
+  /* JSが動いていないとき：ローダーを出さず、すべて最初から見せる */
+  html:not(.js) #loader { display: none; }
+  html:not(.js) .reveal,
+  html:not(.js) .hero-title .char,
+  html:not(.js) .hero-sub,
+  html:not(.js) .hero-cta,
+  html:not(.js) .hero-meta { opacity: 1; transform: none; }
+
+  /* 端末で「視差効果を減らす」設定の人には、動きを出さない */
+  @media (prefers-reduced-motion: reduce) {
+    #loader { display: none; }
+    .reveal, .hero-title .char, .hero-sub, .hero-cta, .hero-meta {
+      opacity: 1 !important; transform: none !important; transition: none !important;
+    }
   }
 </style>
 </head>
@@ -1916,6 +1942,14 @@
       <img src="shoot-6.jpg" alt="着物でのスタジオプロフィール撮影" width="900" height="1200" loading="lazy" decoding="async">
     </div>
     <div class="support-box reveal" style="margin-top:1.2rem;">
+      <div class="support-label">自分でも直したい方に</div>
+      <div class="support-body">
+        <h3 class="support-title">自分で書きかえられる仕組み（LPのオプション）</h3>
+        <p class="support-desc">料金・日程・お知らせを、スマホやパソコンからご自身で書きかえられるようにします。見た目は崩れない作りです。新しい講座の告知や写真の撮り直しなど、新しく何かを出すときは月額の運用サポートで。</p>
+      </div>
+      <div class="support-price">＋¥30,000<span>使い方の説明（オンライン1回）込み</span></div>
+    </div>
+    <div class="support-box reveal" style="margin-top:1.2rem;">
       <div class="support-label">ページが複数いる方に</div>
       <div class="support-body">
         <h3 class="support-title">ホームページ（複数ページ）</h3>
@@ -2077,7 +2111,7 @@
       </details>
       <details class="faq-item reveal">
         <summary>LPの公開後の修正はできますか？</summary>
-        <p>納品から2週間以内の誤字修正・微調整は無償で対応します。その後の更新や改善は、月額の運用サポート（¥10,000/月）または都度お見積もりで承ります。</p>
+        <p>納品から2週間以内の誤字修正・微調整は無償で対応します。その後の更新や改善は、月額の運用サポート（¥10,000/月）または都度お見積もりで承ります。料金・日程・お知らせをご自身で書きかえられる仕組み（＋¥30,000）をつけることもできます。</p>
       </details>
       <details class="faq-item reveal">
         <summary>納期はどのくらいですか？</summary>
@@ -2196,13 +2230,13 @@
     setTimeout(() => {
       document.getElementById('loader').classList.add('done');
       playHero();
-    }, 1600);
+    }, 400);
   });
   // Fallback if load event is slow
   setTimeout(() => {
     const l = document.getElementById('loader');
     if (!l.classList.contains('done')) { l.classList.add('done'); playHero(); }
-  }, 3000);
+  }, 1200);
 
   // ── Hero char-by-char ──
   const heroTitle = document.getElementById('heroTitle');
@@ -2230,7 +2264,7 @@
     heroPlayed = true;
     const chars = heroTitle.querySelectorAll('.char');
     chars.forEach((c, i) => {
-      c.style.transitionDelay = (i * 0.045) + 's';
+      c.style.transitionDelay = (i * 0.018) + 's';
     });
     heroTitle.classList.add('played');
     document.getElementById('heroSub').classList.add('played');
@@ -2250,15 +2284,22 @@
 
   // ── Scroll reveal ──
   const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(r => observer.observe(r));
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(r => observer.observe(r));
+  } else {
+    reveals.forEach(r => r.classList.add('visible'));
+  }
+
+  // ここまで動けば正常（4秒の保険を止める）
+  window.__c5fReady = true;
 </script>
 </body>
 </html>
